@@ -1,0 +1,9 @@
+[package]
+name = "araneta-maugnayin-viewer"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+html = { git = "https://github.com/acodili-jg/html.git", branch = "break-all" }
+itertools = "0.14.0"
+lightningcss = { version = "1.0.0-alpha.71", default-features = false }
