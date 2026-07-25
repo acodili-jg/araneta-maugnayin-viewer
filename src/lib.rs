@@ -6,6 +6,7 @@
 pub mod abbr;
 pub mod counter;
 pub mod entry;
+pub mod entry_v2;
 pub mod format;
 pub mod page;
 pub mod pages;
