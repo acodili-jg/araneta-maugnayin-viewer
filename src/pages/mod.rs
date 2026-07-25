@@ -1,6 +1,9 @@
 use html::interactive::builders::DetailsBuilder;
 
-use crate::{entry, html, page::UnpackedBuildContext};
+use crate::entry::Entries;
+use crate::entry_html::EntriesHtml;
+use crate::html;
+use crate::page::UnpackedBuildContext;
 
 pub mod bungadsabi;
 pub mod karaniwang_salita;
@@ -11,7 +14,7 @@ pub mod sinalapat_na_sipnayan;
 
 pub type Category<'a> = (SubCategory<'a>, &'a [SubCategory<'a>]);
 
-pub type SubCategory<'a> = (bool, &'a str, &'a str, &'a [entry::Page<'a>]);
+pub type SubCategory<'a> = (bool, &'a str, &'a str, Entries<'a>);
 
 fn build_categories(categories: &[Category<'static>], mut context: UnpackedBuildContext) {
     let mut details = create_category(
@@ -28,7 +31,10 @@ fn build_categories(categories: &[Category<'static>], mut context: UnpackedBuild
     details.style("counter-reset: vocabulary;".to_string());
     context.builder.push(details.build());
 
-    let (mut offset, mut page) = (karaniwang_salita::COUNT, karaniwang_salita::ENTRIES.len());
+    let (mut offset, mut page) = (
+        karaniwang_salita::COUNT,
+        karaniwang_salita::ENTRIES.pages().len(),
+    );
 
     for &category in categories {
         if category.0.0 {
@@ -48,8 +54,8 @@ fn build_category(
     let mut details = create_category(offset, page, category);
     details.style(format!("counter-reset: vocabulary {offset};"));
 
-    offset += entry::count(category.3);
-    page += category.3.len();
+    offset += category.3.count();
+    page += category.3.pages().len();
 
     for &subcategory in subcategories {
         if subcategory.0 {
@@ -59,17 +65,17 @@ fn build_category(
         let mut subdetails = create_subcategory(offset, page, subcategory);
         subdetails.style(format!("counter-reset: vocabulary {offset};"));
 
-        offset += entry::count(category.3);
-        page += category.3.len();
+        offset += category.3.count();
+        page += category.3.pages().len();
 
-        if subcategory.3.is_empty() {
+        if subcategory.3.pages().is_empty() {
             subdetails.open(false);
         }
 
         details.push(subdetails.build());
     }
 
-    if category.3.is_empty() && subcategories.is_empty() {
+    if category.3.pages().is_empty() && subcategories.is_empty() {
         details.open(false);
     }
 
@@ -82,8 +88,7 @@ fn create_category(
     page: usize,
     (_, pangalan, name, entries): SubCategory<'static>,
 ) -> DetailsBuilder {
-    entry::build_entries(
-        entries,
+    entries.build_entries(
         offset,
         page,
         html!(h2
@@ -100,8 +105,7 @@ fn create_subcategory(
     page: usize,
     (_, pangalan, name, entries): SubCategory<'static>,
 ) -> DetailsBuilder {
-    entry::build_entries(
-        entries,
+    entries.build_entries(
         offset,
         page,
         html!(h3

@@ -1,6 +1,6 @@
-use crate::entries;
+use crate::entry::definitions;
 
-entries!(
+definitions!(
     // Page 9
     [
         // 351-360
@@ -9,14 +9,14 @@ entries!(
         ["algebra of sets"] => ["panandaan ng tangkas"],
         ["and so on…"] => ["at pagayon…"],
         ["any set"] => ["anumang tanglas"],
-        ["A prime"<a:"A'">] => ["A kudlit"],
+        ["A prime"<alt:"A'">] => ["A kudlit"],
         ["a set"] => ["isang tangkas"],
         ["associative"] => ["ugnayin"],
         ["associative law"] => ["ugnaying batas"],
         ["associativity"] => ["kaugnayin"],
         // 361-370
         ["belongs to"] => ["ay nauukol sa"],
-        ["can be placed into one-to-one correspondence"] => ["maisusungkad"<a:"maisasatugon nang isa-sa-isa">],
+        ["can be placed into one-to-one correspondence"] => ["maisusungkad"<alt:"maisasatugon nang isa-sa-isa">],
         ["closure property"] => ["kaangkinang pinid"],
         ["collection"] => ["katipunan"],
         ["commutative"] => ["palitin"],
@@ -38,10 +38,10 @@ entries!(
         // 377-380
         ["distributivity"] => ["pagkabahagihin"],
         ["domain"] => ["saklaw"],
-        ["element"] => ["mulhagi"<e:"mulaang bahagi">],
+        ["element"] => ["mulhagi"<ety:from<"mulaang bahagi">>],
         ["element of a set"] => ["mulhagi ng isang tangkas"],
         // 381-390
-        ["empty"<a:"null"> "set"] => ["walang-lamang tangkas"],
+        ["empty"<alt:"null"> "set"] => ["walang-lamang tangkas"],
         ["equal to"] => ["tumbas sa"],
         ["equivalence"] => ["pagkakahalga"],
         ["equivalent"] => ["kahalga"],
@@ -57,7 +57,7 @@ entries!(
         ["hence"] => ["kaya nga"],
         ["identical elements"] => ["mga kasiyangang mulhagi"],
         ["identity element"] => ["kasiyangang mulhagi"],
-        ["if and only if"<a:"iff">] => ["kung at kung lamang"<a:"kkl">],
+        ["if and only if"<alt:"iff">] => ["kung at kung lamang"<alt:"kkl">],
         ["improper subset"] => ["di-angkop na kubtangkas"],
         ["indefinite set"] => ["tangkas na dituring"],
         ["inequality"] => ["dikatumbasan"],
@@ -69,7 +69,7 @@ entries!(
         ["inverse element"] => ["kabaligtarang mulhagi"],
         ["inverse operation"] => ["baligtaring sakilos"],
         ["is a subset of"] => ["ay kubtangkas ng"],
-        ["is equivalent to"<g:"set">] => ["ay kahalga ng"<g:"tangkas">],
+        ["is equivalent to"<t:"set">] => ["ay kahalga ng"<t:"tangkas">],
         ["less than"] => ["kubos sa"],
         ["member"] => ["kabilang"],
         ["member of a set"] => ["kabilang ng isang tangkas"],
@@ -84,7 +84,7 @@ entries!(
     [
         // 416-420
         ["number line"] => ["guhitbilang"],
-        ["one-to-one correspondence"] => ["sungkad"<l:MatTag>],
+        ["one-to-one correspondence"] => [MatTag:"sungkad"],
         ["open phrase"] => ["bukas na parirala"],
         ["open sentence"] => ["bukas na pangungusap"],
         ["operation"] => ["sakilos"],
@@ -92,7 +92,7 @@ entries!(
         ["operation on sets"] => ["mga sakilos sa mga tangkas"],
         ["operator"] => ["pakilos"],
         ["ordered pair"] => ["kapid na ayos"],
-        ["pair"] => ["kapid"<l:Bis>],
+        ["pair"] => [Bis:"kapid"],
         ["permissible values"] => ["maaaring halga"],
         ["proper subset"] => ["angkop na kubtangkas"],
         ["property"] => ["kaangkinan"],
@@ -101,8 +101,8 @@ entries!(
         ["reflexivity"] => ["pagkapabalik"],
         // 431-440
         ["replacemenet set"] => ["pamalit na tangkas"],
-        ["roster"<a:"tabulation"> "method"] => ["pamamaraang panalatag"],
-        ["rule"<a:"defining property"> "method"] => ["pamamaraang panturing"],
+        ["roster"<alt:"tabulation"> "method"] => ["pamamaraang panalatag"],
+        ["rule"<alt:"defining property"> "method"] => ["pamamaraang panturing"],
         ["set"] => ["tangkas"],
         ["set equality"] => ["katumbasan ng tangkas"],
         ["set notation"] => ["halat ng tangkas"],
@@ -116,7 +116,7 @@ entries!(
         ["superset"] => ["higtangkas"],
         ["symbol"] => ["sagisag"],
         ["symmetric property"] => ["kaaangkinang parianyuin"],
-        ["the entire"<a:"whole"> "set"] => ["ang buong tangkas"],
+        ["the entire"<alt:"whole"> "set"] => ["ang buong tangkas"],
         ["the set"] => ["ang tangkas"],
         ["topological set"] => ["lunaning talangkas"],
         ["totality"] => ["sangkabuuan"],

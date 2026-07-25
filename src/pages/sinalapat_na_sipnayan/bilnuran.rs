@@ -1,6 +1,6 @@
-use crate::entries;
+use crate::entry::definitions;
 
-entries!(
+definitions!(
     // Page 12
     [
         // 460
@@ -10,7 +10,7 @@ entries!(
         ["add"] => ["magdagdag"],
         ["addend"] => ["panagdag"],
         ["adition"] => ["palaragdagan"],
-        ["arithmetic"] => ["bilnuran"<e:"bilang" "sunuran">],
+        ["arithmetic"] => ["bilnuran"<ety:af<"bilang"><"sunuran">>],
         ["augend"] => ["dagdagin"],
         ["base"] => ["takad"],
         ["binomial"] => ["duhakay"],
@@ -29,8 +29,8 @@ entries!(
         ["cross multiplication"] => ["laktawang palaramihan"],
         // 481-488
         ["cross products"] => ["mga laktawang bunga"],
-        ["decade"<g:"ten of anything">] => ["sinampu"],
-        ["decade"<g:"ten years">] => ["pultaon"],
+        ["decade"<t:"ten of anything">] => ["sinampu"],
+        ["decade"<t:"ten years">] => ["pultaon"],
         ["decimal fraction"] => ["sampuing hatimbilang"],
         ["decimal"] => ["sampuan"],
         ["decimal point"] => ["tuldok-sampuan"],
@@ -65,8 +65,8 @@ entries!(
         ["integer"] => ["buumbilang"],
         ["irrational number"] => ["bilang na ditagwayin"],
         // 511-520
-        ["least common denominator"<a:"LCD">] => ["pinakamaliit na lahatang pamahagi"<a:"PLP">],
-        ["least common multiple"<a:"LCM">] => ["pinakamaliit na lahatang kaparami"<a:"PLK">],
+        ["least common denominator"<alt:"LCD">] => ["pinakamaliit na lahatang pamahagi"<alt:"PLP">],
+        ["least common multiple"<alt:"LCM">] => ["pinakamaliit na lahatang kaparami"<alt:"PLK">],
         ["line segment"] => ["putol na guhit"],
         ["lowest term"] => ["pinakamababang takay"],
         ["mean"] => ["tamtaman"],
@@ -74,10 +74,10 @@ entries!(
         ["minuend"] => ["bawasin"],
         ["minus"] => ["bawas"],
         ["mixed fraction"] => ["haluang hatimbilang"],
-        ["monomial"] => ["isakay"<e:"isang takay">],
+        ["monomial"] => ["isakay"<ety:from<"isang takay">>],
         // 521-528
-        ["multiple"<q:adj>] => ["dinami", "maramihan"],
-        ["multiple"<q:n>] => ["kaparami"],
+        ["multiple"<pos:adj>] => ["dinami", "maramihan"],
+        ["multiple"<pos:n>] => ["kaparami"],
         ["multinomial"] => ["maramikay"],
         ["multiplicand"] => ["damihin"],
         ["multiplication"] => ["palaramihan"],
@@ -103,44 +103,44 @@ entries!(
         ["plus"] => ["dagdag"],
         // 541-550
         ["polynomial form"] => ["damikaying anyo"],
-        ["point"<a:".">] => ["tuldok"],
+        ["point"<alt:".">] => ["tuldok"],
         ["positive sign"] => ["tandang tahas"],
         ["power"] => ["lambal"],
         ["problem"] => ["lutasin"],
         ["proper fraction"] => ["angkop na hatimbilang"],
-        ["proportion"] => ["hagway"<l:MatTag>],
+        ["proportion"] => [MatTag:"hagway"],
         ["quantity to be found"] => ["hanapin"],
         ["quotient"] => ["kahatian"],
-        ["ratio"] => ["tagway"<l:MatTag>],
+        ["ratio"] => [MatTag:"tagway"],
         // 551-560
         ["rational number"] => ["bilang na tagwayin"],
         ["reciprocal"] => ["kabaligtad"],
         ["remainder theorem"] => ["hunain ng labi"],
         ["Roman numerals"] => ["pamilang Romano"],
         ["rounding off"] => ["pagbilog"],
-        ["short cut"] => ["laktod"<l:Hlg>],
+        ["short cut"] => [Hlg:"laktod"],
         ["sign"] => ["tanda", "pananda"],
         ["similar fractions"] => ["hawig na hatimbilang"],
         ["simplest form or term"] => ["pinakapayak na takay"],
-        ["simplify"<q:v>] => ["payakin"],
+        ["simplify"<pos:v>] => ["payakin"],
         // 561-570
         ["single"] => ["inisa"],
         ["solvable"] => ["malulutas"],
         ["subtract"] => ["magbawas"],
         ["subtraction"] => ["palabawasan"],
         ["subtrahend"] => ["pamawas"],
-        ["sum"] => ["dagup"<l:Ilk>],
+        ["sum"] => [Ilk:"dagup"],
         ["term"] => ["takay"],
         ["therefore"] => ["kung gayon"],
-        ["times"] => [""<a:"x"> "maka"],
+        ["times"] => ["maka"<lalt:"x">],
         ["total"] => ["kabuuan"],
         // 571
-        ["transpose"<q:v>] => ["ilipat"],
+        ["transpose"<pos:v>] => ["ilipat"],
     ],
     // Page 15
     [
         // 572-577
-        ["transposition"<q:n>] => ["salipat"],
+        ["transposition"<pos:n>] => ["salipat"],
         ["trinomial"] => ["talukay"],
         ["unique"] => ["nag-iisa"],
         ["unknown"] => ["di-alam"],

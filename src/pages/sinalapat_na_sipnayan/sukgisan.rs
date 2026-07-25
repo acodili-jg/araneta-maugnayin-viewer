@@ -1,6 +1,6 @@
-use crate::entries;
+use crate::entry::definitions;
 
-entries!(
+definitions!(
     // Page 15
     [
         // 578-580
@@ -12,10 +12,10 @@ entries!(
         ["altitude"] => ["tayog"],
         ["analytic geometry"] => ["suriing sukgisan"],
         ["angle"] => ["siha"],
-        ["axiom"] => ["batlain"<e:"batayan na simulain">],
+        ["axiom"] => ["batlain"<ety:from<"batayan na simulain">>],
         ["base angle"] => ["sihang takaran"],
         ["broken line"] => ["guhit na bali-bali"],
-        ["bulk"] => ["bikil"<l:MatTag>],
+        ["bulk"] => [MatTag:"bikil"],
         ["centi-"] => ["senti-"],
         ["chord"] => ["bagting"],
         // 591-600
@@ -28,17 +28,17 @@ entries!(
         ["construct a figure"] => ["gumuhit ng isang laraw"],
         ["construction"] => ["pagguhit"],
         ["corollary"] => ["hugpungin"],
-        ["cube"<g:"solid Geo.">] => ["binuok"],
+        ["cube"<t:"solid Geo.">] => ["binuok"],
         // 601-609
-        ["cube"<g:"the third power">] => ["talurami"],
+        ["cube"<t:"the third power">] => ["talurami"],
         ["diagonal"] => ["hilis"],
         ["decagon"] => ["pulsiha"],
         ["decahedron"] => ["puldayah"],
         ["deci-"] => ["desi-"],
         ["degree"] => ["antas"],
-        ["disc"] => ["dalipay"<l:MatTag>],
+        ["disc"] => [MatTag:"dalipay"],
         ["draw a line"] => ["gumuhit"],
-        ["ellipse"] => ["duyog"<l:MatTag>],
+        ["ellipse"] => [MatTag:"duyog"],
     ],
     // Page 16
     [
@@ -46,26 +46,26 @@ entries!(
         ["end point"] => ["dulong tuldok"],
         // 611-620
         ["equiangular"] => ["parisiha"],
-        ["equilateral"<q:adj>] => ["parigilid"],
+        ["equilateral"<pos:adj>] => ["parigilid"],
         ["evolute"] => ["balisultag"],
         ["foot"] => ["talampakan"],
         ["frame"] => ["bastagan"],
         ["French curve"] => ["kiluang galod"],
         ["fundamental principle"] => ["batayang simulain"],
         ["geometrical interpretation"] => ["sukgising pakahulugan"],
-        ["geometry"] => ["sukgisan"<e:"sukat" "hugis" "-an">],
-        ["globe"] => ["hilihid"<l:MatTag>],
+        ["geometry"] => ["sukgisan"<ety:blend<"sukat"><"hugis"><"-an">>],
+        ["globe"] => [MatTag:"hilihid"],
         // 621-630
         ["helix"] => ["pilipit"],
         ["hemisphere"] => ["hatimbulog"],
         ["heptagon"] => ["pitsiha"],
-        ["hypotenuse"] => ["gilis"<e:"gilid na hilis">],
+        ["hypotenuse"] => ["gilis"<ety:from<"gilid na hilis">>],
         ["hexagon"] => ["nimsiha"],
         ["hexahedron"] => ["nimdayag"],
         ["hypothesis"] => ["palagayin"],
         ["inch"] => ["dali"],
         ["included angle"] => ["sihang ipit"],
-        ["involute"] => ["sultag"<e:"sulong" "latag">],
+        ["involute"] => ["sultag"<ety:blend<"sulong"><"latag">>],
         // 631-640
         ["isolated point"] => ["bukod na tuldok"],
         ["length"] => ["haba"],
@@ -82,12 +82,12 @@ entries!(
         ["octagon"] => ["walsiha"],
         ["one dimensional figure"] => ["laraw na iisahing sukod"],
         ["opposite angle"] => ["sihang tapat"],
-        ["oval"] => ["habilog"<e:"habang bilog">],
+        ["oval"] => ["habilog"<ety:from<"habang bilog">>],
         ["parallel"] => ["agapay"],
         ["parallel lines"] => ["mga guhit na agapay"],
         ["parallelogram"] => ["parigapay"],
         ["parallel sections"] => ["mga tapyas na agapay"],
-        ["perimeter"] => ["gikop"<e:"gilid" "salikop">],
+        ["perimeter"] => ["gikop"<ety:blend<"gilid"><"salikop">>],
     ],
     // Page 17
     [
@@ -95,7 +95,7 @@ entries!(
         ["pentahedron"] => ["limdayag"],
         ["pentagon"] => ["limsiha"],
         ["perpendicular"] => ["tadlong"],
-        ["perspective"<g:"3-dimensional effect">] => ["sawang"<l:MatTag>],
+        ["perspective"<t:"3-dimensional effect">] => [MatTag:"sawang"],
         ["plane geometry"] => ["lapyang sukgisan"],
         ["principle"] => ["simulain"],
         ["proof"] => ["patunay"],
@@ -107,7 +107,7 @@ entries!(
         ["prism"] => ["balimbing"],
         ["prolongation of a line"] => ["padayon ng guhit"],
         ["polygon"] => ["damsiha"],
-        ["polyhedron"] => ["damdayag"<e:"dami" "hayag">],
+        ["polyhedron"] => ["damdayag"<ety:blend<"dami"><"hayag">>],
         ["pyramid"] => ["tagilo"],
         ["quadrilateral"] => ["patgilid"],
         ["radius"] => ["lihit"],
@@ -118,11 +118,11 @@ entries!(
         ["right angle"] => ["sihang tadlong"],
         ["rhomboid"] => ["tagihilis"],
         ["rhombus"] => ["tagisukat"],
-        ["scale"<g:"of degrees">] => ["talaantasan"],
-        ["secant"<g:"Geometry">] => ["tangab"<l:MatTag>],
+        ["scale"<t:"of degrees">] => ["talaantasan"],
+        ["secant"<t:"Geometry">] => [MatTag:"tangab"],
         ["section"] => ["tapyas"],
         ["segment"] => ["putol"],
-        ["segment"<g:"of a circle">] => ["liha"<g:"liha ng isang bilog">],
+        ["segment"<t:"of a circle">] => ["liha"<t:"liha ng isang bilog">],
         ["semicircumference"] => ["hatintikop"],
         // 681-690
         ["shape"] => ["hugis"],
@@ -141,13 +141,13 @@ entries!(
     // Page 18
     [
         // 692-700
-        ["surface"<g:"as contrasted to the reverse side">] => ["karayagan"],
-        ["tangent"<g:"line">] => ["dikit"],
+        ["surface"<t:"as contrasted to the reverse side">] => ["karayagan"],
+        ["tangent"<t:"line">] => ["dikit"],
         ["theorem"] => ["hunain"],
         ["theory"] => ["huna"],
         ["tetrahedron"] => ["patdayag"],
         ["T-square"] => ["paripang galod"],
-        ["trapezoid"] => ["tagigapay"<e:"tagibang" "agapay">],
+        ["trapezoid"] => ["tagigapay"<ety:blend<"tagibang"><"agapay">>],
         ["truncated"] => ["tinapyas"],
         ["two-dimensional figure"] => ["laraw na dadalawahing sukod"],
         // 701-705

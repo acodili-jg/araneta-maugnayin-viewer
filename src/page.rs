@@ -1,5 +1,7 @@
+use html::content::Main;
+use html::content::builders::MainBuilder;
+
 use crate::{Text, counter};
-use html::content::{Main, builders::MainBuilder};
 
 #[derive(Clone, Debug, PartialEq)]
 pub struct Page {
@@ -30,7 +32,7 @@ pub struct UnpackedBuildContext<'a> {
 
 impl Builder {
     #[inline]
-    #[must_use] 
+    #[must_use]
     pub const fn new() -> Self {
         Self {
             pages: Vec::new(),
@@ -39,7 +41,7 @@ impl Builder {
     }
 
     #[inline]
-    #[must_use] 
+    #[must_use]
     pub fn with_capacity(capacity: usize) -> Self {
         Self {
             pages: Vec::with_capacity(capacity),
@@ -48,13 +50,13 @@ impl Builder {
     }
 
     #[inline]
-    #[must_use] 
+    #[must_use]
     pub const fn pages(&self) -> &[Page] {
         self.pages.as_slice()
     }
 
     #[inline]
-    #[must_use] 
+    #[must_use]
     pub fn into_pages(self) -> Vec<Page> {
         self.pages
     }
@@ -78,25 +80,25 @@ impl Builder {
 
 impl BuildContext<'_> {
     #[inline]
-    #[must_use] 
+    #[must_use]
     pub const fn id(&self) -> &'static str {
         self.id
     }
 
     #[inline]
-    #[must_use] 
+    #[must_use]
     pub const fn name(&self) -> Text<'static> {
         self.name
     }
 
     #[inline]
-    #[must_use] 
+    #[must_use]
     pub const fn lang(&self) -> Option<&'static str> {
         self.lang
     }
 
     #[inline]
-    #[must_use] 
+    #[must_use]
     pub const fn builder(&self) -> &MainBuilder {
         &self.builder
     }

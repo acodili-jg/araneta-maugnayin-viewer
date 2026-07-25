@@ -1,4 +1,3 @@
-
 #[derive(Clone, Copy, Debug, Eq, Ord, PartialEq, PartialOrd)]
 #[non_exhaustive]
 pub enum Language {
@@ -45,14 +44,9 @@ impl Language {
 }
 
 pub mod alias {
+    #[allow(unused_imports)]
     pub use super::Language::{
-        Bisaya as Bis,
-        Bikol as Bkl,
-        Hiligaynon as Hlg,
-        Iluko as Ilk,
-        Kapampangan as Kpn,
-        Maranaw as Mar,
-        MatandangTagalog as MatTag,
-        Tagalog as Tag,
+        Bikol as Bkl, Bisaya as Bis, Hiligaynon as Hlg, Iluko as Ilk, Kapampangan as Kpn,
+        Maranaw as Mar, MatandangTagalog as MatTag, Tagalog as Tag,
     };
 }

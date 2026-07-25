@@ -1,10 +1,10 @@
-use std::{io, path::Path, process::ExitCode};
+use std::io;
+use std::path::Path;
+use std::process::ExitCode;
 
-use lightningcss::{
-    printer::PrinterOptions,
-    stylesheet::{MinifyOptions, ParserOptions, StyleSheet},
-    targets::{Features, Targets},
-};
+use lightningcss::printer::PrinterOptions;
+use lightningcss::stylesheet::{MinifyOptions, ParserOptions, StyleSheet};
+use lightningcss::targets::{Features, Targets};
 
 const STYLESHEETS: &str = "stylesheets/";
 

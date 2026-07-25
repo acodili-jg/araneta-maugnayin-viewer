@@ -1,8 +1,9 @@
 pub mod alias;
 mod build_html;
 
-use html::inline_text::Span;
 use std::borrow::Cow;
+
+use html::inline_text::Span;
 
 #[macro_export]
 macro_rules! quote {

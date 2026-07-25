@@ -1,50 +1,105 @@
-use crate::{abbr, build_html, page::BuildContext};
+use crate::entry::entries;
+use crate::page::BuildContext;
+use crate::{abbr, build_html};
 
 // TODO
 const SUBCATS: &[super::Category<'_>] = &[
     (
-        (false, "Tauhing Balisuplingan", "Human Reproduction", &[]),
+        (
+            false,
+            "Tauhing Balisuplingan",
+            "Human Reproduction",
+            entries!(),
+        ),
         &[
-            (false, "Tauhing Balisuplingan", "Human Reproduction", &[]),
-            (false, "Katwanang Pambabae", "Female Anatomy", &[]),
-            (false, "Katwanang Panlalaki", "Male Anatomy", &[]),
-            (false, "Liksanan at Palasakitan ng Buwanan", "Physiology and Pathology of Menstruation", &[]),
-            (false, "Dalubsarian", "Sexology", &[]),
-            (false, "Balisuplinging Liksanan", "Reproductive Physiology", &[]),
-            (false, "Balatian ng mga Balisuplinging Tatag", "Diseases of Reproductive Organs", &[]),
+            (
+                false,
+                "Tauhing Balisuplingan",
+                "Human Reproduction",
+                entries!(),
+            ),
+            (false, "Katwanang Pambabae", "Female Anatomy", entries!()),
+            (false, "Katwanang Panlalaki", "Male Anatomy", entries!()),
+            (
+                false,
+                "Liksanan at Palasakitan ng Buwanan",
+                "Physiology and Pathology of Menstruation",
+                entries!(),
+            ),
+            (false, "Dalubsarian", "Sexology", entries!()),
+            (
+                false,
+                "Balisuplinging Liksanan",
+                "Reproductive Physiology",
+                entries!(),
+            ),
+            (
+                false,
+                "Balatian ng mga Balisuplinging Tatag",
+                "Diseases of Reproductive Organs",
+                entries!(),
+            ),
         ],
     ),
-    ((false, "Mga Pamamaraan ng Sabalak-angkan", "Family Planning Methods", &[]), &[]),
     (
-        (false, "Asiwa ng Sabalak-angkan", "Family Planning Adiminstration", &[]),
+        (
+            false,
+            "Mga Pamamaraan ng Sabalak-angkan",
+            "Family Planning Methods",
+            entries!(),
+        ),
+        &[],
+    ),
+    (
+        (
+            false,
+            "Asiwa ng Sabalak-angkan",
+            "Family Planning Adiminstration",
+            entries!(),
+        ),
         &[
-            (false, "Mga Uri ng Lingkuran", "Types of Services", &[]),
-            (false, "Mga Tatagin", "Establishments", &[]),
-            (false, "Pinaglilingkurang Santauhan", "Population Served", &[]),
-            (false, "Mga Tagatanggap at Tagagamit ng Sabalak-angkan", "Family Planning Acceptors and Users", &[]),
-            (false, "Alaga at Sadalo", "Care and Attendance", &[]),
-            (false, "Tauhan", "Personnel", &[]),
-            (false, "Pagsasanay", "Training", &[]),
-            (false, "Paturuang-lusog", "Health Education", &[]),
-            (false, "Talamitam", "Communication", &[]),
+            (
+                false,
+                "Mga Uri ng Lingkuran",
+                "Types of Services",
+                entries!(),
+            ),
+            (false, "Mga Tatagin", "Establishments", entries!()),
+            (
+                false,
+                "Pinaglilingkurang Santauhan",
+                "Population Served",
+                entries!(),
+            ),
+            (
+                false,
+                "Mga Tagatanggap at Tagagamit ng Sabalak-angkan",
+                "Family Planning Acceptors and Users",
+                entries!(),
+            ),
+            (false, "Alaga at Sadalo", "Care and Attendance", entries!()),
+            (false, "Tauhan", "Personnel", entries!()),
+            (false, "Pagsasanay", "Training", entries!()),
+            (false, "Paturuang-lusog", "Health Education", entries!()),
+            (false, "Talamitam", "Communication", entries!()),
         ],
     ),
     (
-        (false, "Talasantauhan", "Demography", &[]),
+        (false, "Talasantauhan", "Demography", entries!()),
         &[
-            (false, "Santauhan", "Population", &[]),
-            (false, "Kasalan", "Nuptiality", &[]),
-            (false, "Pagkakamatay", "Mortality", &[]),
-            (false, "Pagkamapupunlaan", "Fertility", &[]),
-            (false, "Angkan", "Family", &[]),
-            (false, "Sambahayan", "Household", &[]),
-            (false, "Kasakitan", "Morbidity", &[]),
-            (false, "Ngibambayan", "Migration", &[]),
-            (false, "Sabalak-angkan", "Family Planning", &[]),
+            (false, "Santauhan", "Population", entries!()),
+            (false, "Kasalan", "Nuptiality", entries!()),
+            (false, "Pagkakamatay", "Mortality", entries!()),
+            (false, "Pagkamapupunlaan", "Fertility", entries!()),
+            (false, "Angkan", "Family", entries!()),
+            (false, "Sambahayan", "Household", entries!()),
+            (false, "Kasakitan", "Morbidity", entries!()),
+            (false, "Ngibambayan", "Migration", entries!()),
+            (false, "Sabalak-angkan", "Family Planning", entries!()),
         ],
     ),
-    ((false, "Galamot", "Drugs", &[]), &[]),
-    ((false, "Sahalga", "Evaluation", &[]), &[]),
+    ((false, "Galamot", "Drugs", entries!()), &[]),
+    ((false, "Sahalga", "Evaluation", entries!()), &[]),
 ];
 
 #[inline]

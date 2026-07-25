@@ -1,14 +1,16 @@
 // Due to the `html` crate's types
 #![recursion_limit = "512"]
-use std::{io, path::Path};
+use std::io;
+use std::path::Path;
 
-pub use araneta_maugnayin_viewer::{build_html, html, page, pages, text::Text};
-use html::{
-    content::{Navigation, builders::NavigationBuilder},
-    inline_text::{Anchor, children::AnchorChild},
-    root::Body,
-    text_content::{ListItem, OrderedList},
-};
+pub use amavi::text::Text;
+pub use amavi::{build_html, html, page, pages};
+use html::content::Navigation;
+use html::content::builders::NavigationBuilder;
+use html::inline_text::Anchor;
+use html::inline_text::children::AnchorChild;
+use html::root::Body;
+use html::text_content::{ListItem, OrderedList};
 use itertools::{Itertools, izip};
 
 fn main() {

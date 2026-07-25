@@ -5,13 +5,13 @@
 
 pub mod abbr;
 pub mod counter;
-pub mod entry;
-pub mod entry_v2;
+pub mod entry_html;
 pub mod format;
 pub mod page;
 pub mod pages;
 pub mod text;
 
+pub use amavi_entry as entry;
 pub use text::Text;
 
 pub const MGA_LARANGAN: [(&str, &str, &str); 9] = [

@@ -16,13 +16,18 @@ dependencies = [
 ]
 
 [[package]]
-name = "araneta-maugnayin-viewer"
+name = "amavi"
 version = "0.1.0"
 dependencies = [
+ "amavi-entry",
  "html",
  "itertools 0.14.0",
  "lightningcss",
 ]
+
+[[package]]
+name = "amavi-entry"
+version = "0.1.0"
 
 [[package]]
 name = "bitflags"

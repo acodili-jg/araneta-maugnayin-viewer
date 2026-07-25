@@ -1,6 +1,9 @@
-use crate::{entries, entry, html, page::BuildContext};
+use crate::entry::definitions;
+use crate::entry_html::EntriesHtml;
+use crate::html;
+use crate::page::BuildContext;
 
-entries!(
+definitions!(
     // Page 1
     [
         // 1-10
@@ -21,8 +24,8 @@ entries!(
         ["analysis"] => ["suri"],
         ["announcement"] => ["pabatid"],
         ["arc"] => ["bantok"],
-        ["area"<g:"in general">] => ["lawak"],
-        ["area"<g:"specified">] => ["dawak"],
+        ["area"<t:"in general">] => ["lawak"],
+        ["area"<t:"specified">] => ["dawak"],
         ["around"] => ["palibot"],
         ["arrangement"] => ["ayos"],
         // 21-30
@@ -38,13 +41,13 @@ entries!(
         ["bilingual"] => ["dalwikain"],
         // 31-39
         ["biologi"] => ["haynayan"],
-        ["body"<g:"inorganic">] => ["lawas"<l:Hlg>],
+        ["body"<t:"inorganic">] => [Hlg:"lawas"],
         ["booklet"] => ["muntaklat"],
         ["bulletin board"] => ["paskilan"],
         ["by means of"] => ["sagitan ng"],
         ["campus"] => ["kampusan"],
         ["candidate"] => ["halangad"],
-        ["canteen"] => ["manganan"<l:Kpn>],
+        ["canteen"] => [Kpn:"manganan"],
         ["capacity"] => ["lulan"],
     ],
     // Page 2
@@ -52,12 +55,12 @@ entries!(
         // 40
         ["car"] => ["batlag"],
         // 41-50
-        ["cash"<g:"money on hand">] => ["salaping-hawak"],
+        ["cash"<t:"money on hand">] => ["salaping-hawak"],
         ["cashier"] => ["ingatsalapi"],
         ["center"] => ["lunduyan"],
         ["ceremony"] => ["galian"],
         ["certain"] => ["tiyak"],
-        ["change"] => ["baylo"<l:Bis>],
+        ["change"] => [Bis:"baylo"],
         ["chaplain"] => ["kapelyan"],
         ["chart"] => ["taltaguhit"],
         ["chemistry"] => ["kapnayan"],
@@ -105,7 +108,7 @@ entries!(
         ["definition"] => ["katuringan"],
         ["delivery"] => ["hatid"],
         ["dense"] => ["siksik"],
-        ["design"] => ["antang"<l:Mar>],
+        ["design"] => [Mar:"antang"],
         ["development"] => ["saunlad"],
         ["deviation"] => ["lihis"],
         ["dictionary"] => ["talatinigan"],
@@ -120,10 +123,10 @@ entries!(
         ["dormitory"] => ["panuluyan"],
         ["draft"] => ["waki"],
         ["duration"] => ["lawig"],
-        ["earth"] => ["duta"<l:Bis>],
+        ["earth"] => [Bis:"duta"],
         // 101-110
         ["edge"] => ["gilid"],
-        ["eucation"<g:"as a system">] => ["paturuan"],
+        ["eucation"<t:"as a system">] => ["paturuan"],
         ["effect"] => ["bisa"],
         ["electricity"] => ["dagitab"],
         ["elevator"] => ["sigtas"],
@@ -131,11 +134,11 @@ entries!(
         ["employee"] => ["kawani"],
         ["encyclopedia"] => ["santalaalaman"],
         ["endorsement"] => ["satukoy"],
-        ["energy"] => ["kusog"<l:Bis>],
+        ["energy"] => [Bis:"kusog"],
         // 111-120
         ["engineer"] => ["agsikap"],
         ["environment"] => ["kapaligiran"],
-        ["epic"] => ["darangan"<l:Mar>],
+        ["epic"] => [Mar:"darangan"],
         ["erase"] => ["payi"],
         ["escalator"] => ["sigdan"],
         ["estimate"] => ["taya"],
@@ -144,9 +147,9 @@ entries!(
         ["even"<q:Math>] => ["tukol"],
         ["exact"] => ["singkad"],
         // 121-125
-        ["excess"] => ["labaw"<l:Hlg>, "labis"],
-        ["exercise"<g:"physical">] => ["sabanat"],
-        ["experiment"] => ["tilaw"<l:Bis>],
+        ["excess"] => [Hlg:"labaw", "labis"],
+        ["exercise"<t:"physical">] => ["sabanat"],
+        ["experiment"] => [Bis:"tilaw"],
         ["extreme"] => ["sukdulan"],
         ["facilities"] => ["kaluwagan"],
     ],
@@ -162,9 +165,9 @@ entries!(
         ["filling cabinet"] => ["salansanan"],
         ["firmess"] => ["katatagan"],
         ["flight"] => ["lipad"],
-        ["focus"] => ["tingob"<l:Hlg>],
+        ["focus"] => [Hlg:"tingob"],
         ["folder"] => ["ipitan"],
-        ["force"] => ["isig"<l:MatTag>],
+        ["force"] => [MatTag:"isig"],
         ["form"] => ["anyo", "anyuan"],
         ["formal"] => ["maanyo"],
         ["foundation"] => ["takaran"],
@@ -176,23 +179,23 @@ entries!(
         ["grain"] => ["butil"],
         ["grandstand"] => ["dakmasiran"],
         ["granular"] => ["malabutil"],
-        ["gravity"] => ["dagsin"<l:Ilk>],
+        ["gravity"] => [Ilk:"dagsin"],
         ["group"] => ["lipon"],
         ["hall"] => ["bulwagan"],
         ["hidden"] => ["kubli"],
         // 151-160
-        ["husband"] => ["bana"<l:Bis>],
+        ["husband"] => [Bis:"bana"],
         ["hymm"] => ["santinig"],
         ["idea"] => ["kaisipan"],
-        ["identification"<a:"I.D.">] => ["pangilala"],
+        ["identification"<alt:"I.D.">] => ["pangilala"],
         ["imperfect"<q:Math>] => ["balhag"],
         ["imperfect"<q:r#gen>] => ["di-himpit"],
         ["increase"] => ["dagdag"],
-        ["increase of speed"] => ["dasig"<l:Bis, l:Bkl>],
+        ["increase of speed"] => ["dasig"<ety:bor<Bis:- ><Bkl:- >>],
         ["indigestion"] => ["di-satunaw"],
         ["indirect measurement"] => ["sukod"],
         // 161-168
-        ["infra-"<g:"comb. form">] => ["sulud-"<l:Bis>],
+        ["infra-"<t:"comb. form">] => [Bis:"sulud-"],
         ["instant"] => ["dagli"],
         ["intention"] => ["sadya"],
         ["intermission"] => ["panalingit"],
@@ -205,7 +208,7 @@ entries!(
     [
         // 169-170
         ["jeopardy"] => ["sanganib"],
-        ["Junior"<a:"Jr.">] => ["Anak"<a:"Ak.">],
+        ["Junior"<alt:"Jr.">] => ["Anak"<alt:"Ak.">],
         // 171-180
         ["justice"] => ["katarungan"],
         ["juvenile"] => ["kabataan"],
@@ -218,15 +221,15 @@ entries!(
         ["lesson"] => ["aral"],
         ["life"] => ["buhay"],
         // 181-190
-        ["light"<g:"optics">] => ["suga"<l:Hlg>],
+        ["light"<t:"optics">] => [Hlg:"suga"],
         ["limit"] => ["takda"],
         ["lobby"] => ["lisawan"],
-        ["log book"<g:"attendance">] => ["taladaluhan"],
+        ["log book"<t:"attendance">] => ["taladaluhan"],
         ["lore"] => ["alamin"],
         ["major"<q:Ed>] => ["kalakhan"],
         ["majority"] => ["karamihan"],
         ["masses"] => ["santao"],
-        ["master"<g:"degree">] => ["paham"],
+        ["master"<t:"degree">] => ["paham"],
         ["mathematics"] => ["sipnayan"],
         // 191-200
         ["measuring scale"] => ["sukatan"],
@@ -238,9 +241,9 @@ entries!(
         ["mimeograph"] => ["limwad"],
         ["mind"] => ["isip"],
         ["minor"<q:Ed>] => ["kalit-an"],
-        ["minor"<g:"Gen.">] => ["maliit"],
+        ["minor"<t:"Gen.">] => ["maliit"],
         // 201-210
-        ["minutes"<g:"of a meeting">] => ["katitikan"],
+        ["minutes"<t:"of a meeting">] => ["katitikan"],
         ["more than"] => ["higit sa"],
         ["motion"] => ["kilos"],
         ["movement"] => ["kilusan"],
@@ -251,7 +254,7 @@ entries!(
         ["nerve"] => ["dagandam"],
         ["next"] => ["sunod"],
         // 211
-        ["none"<a:"zero">] => ["awan"<l:Ilk>],
+        ["none"<alt:"zero">] => [Ilk:"awan"],
     ],
     // Page 6
     [
@@ -309,14 +312,14 @@ entries!(
         // 255-260
         ["reduction"] => ["maliw"],
         ["referendum"] => ["pagtutukoy"],
-        ["region"] => ["danay"<l:Bis>],
+        ["region"] => [Bis:"danay"],
         ["related"] => ["kaugnay"],
-        ["religion"] => ["agamahan"<l:Mar>],
+        ["religion"] => [Mar:"agamahan"],
         ["remainder"] => ["labi"],
         // 261-270
         ["report"] => ["ulat"],
         ["repository"] => ["simpanan"],
-        ["repulsion"] => ["sikway"<l:Hlg>],
+        ["repulsion"] => [Hlg:"sikway"],
         ["result"] => ["bunga", "kinalabasan"],
         ["retail"] => ["tingi"],
         ["return"] => ["balik"],
@@ -336,16 +339,16 @@ entries!(
         ["semester"] => ["hatintaon"],
         ["seminar"] => ["binhisipan"],
         // 281-290
-        ["Senior"<a:"Sr.">] => ["Ama"<a:"Am.">],
+        ["Senior"<alt:"Sr.">] => ["Ama"<alt:"Am.">],
         ["sense"] => ["damdam"],
         ["shape"] => ["hugis"],
         ["sign"] => ["tanda"],
         ["similarity"] => ["hawig"],
         ["small things"] => ["mikmik"],
         ["social sciences"] => ["ulnayan"],
-        ["society"<g:"in general">] => ["ulnong"<l:Ilk>],
+        ["society"<t:"in general">] => [Ilk:"ulnong"],
         ["solid"] => ["siksin"],
-        ["solve"<g:"a problem">] => ["lutas"],
+        ["solve"<t:"a problem">] => ["lutas"],
         // 291-296
         ["source"] => ["mula"],
         ["sowing"] => ["hasik"],
@@ -359,7 +362,7 @@ entries!(
         // 297-300
         ["square"] => ["parisukat"],
         ["star"] => ["tala"],
-        ["steel"] => ["paslip"<l:Ilk>],
+        ["steel"] => [Ilk:"paslip"],
         ["stoppage"] => ["tigil"],
         // 301-310
         ["straight"] => ["tuwid"],
@@ -374,7 +377,7 @@ entries!(
         ["system"] => ["kaayusan"],
         // 311-320
         ["table of contents"] => ["talalamanan"],
-        ["tactics"] => ["paagi"<l:Bis>],
+        ["tactics"] => [Bis:"paagi"],
         ["technical"] => ["aghimuin"],
         ["technology"] => ["aghimuan"],
         ["telephone"] => ["hatinig"],
@@ -387,7 +390,7 @@ entries!(
         ["thesis"] => ["tikha"],
         ["thought"] => ["isipin"],
         ["trust"] => ["sikad"],
-        ["time"] => ["takna"<l:Bis>],
+        ["time"] => [Bis:"takna"],
         ["tone"] => ["linig"],
         ["top"] => ["tuktok"],
         ["track"] => ["tunton"],
@@ -416,7 +419,7 @@ entries!(
         ["voice"] => ["tinig"],
         ["volume"] => ["buok"],
         ["voluntary"] => ["kusa"],
-        ["vote"<g:"in an election">] => ["halal"],
+        ["vote"<t:"in an election">] => ["halal"],
         ["whole"] => ["buo"],
         ["world"] => ["daigdig"],
         ["writings"] => ["panulatan"],
@@ -425,8 +428,7 @@ entries!(
 
 #[inline]
 pub fn karaniwang_salita(mut context: BuildContext<'_>) {
-    let mut entries = entry::build_entries_noncollapsible(
-        ENTRIES,
+    let mut entries = ENTRIES.build_entries_noncollapsible(
         0,
         0,
         html!(h1 "Mga Karaniwang Salitang Pang-agham").build(),

@@ -1,9 +1,7 @@
 use html::text_content::builders::OrderedListBuilder;
 
 use crate::page::{BuildContext, UnpackedBuildContext};
-use crate::{abbr, build_html, html, quote};
-
-use crate::MGA_LARANGAN;
+use crate::{MGA_LARANGAN, abbr, build_html, html, quote};
 
 #[inline]
 pub fn preface(mut context: BuildContext<'_>) {

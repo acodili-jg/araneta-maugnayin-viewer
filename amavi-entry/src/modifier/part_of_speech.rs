@@ -8,7 +8,7 @@ pub enum PartOfSpeech {
 
 impl PartOfSpeech {
     #[inline]
-    #[must_use] 
+    #[must_use]
     pub const fn abbr(self) -> &'static str {
         match self {
             Self::Adjective => "adj.",
@@ -18,7 +18,7 @@ impl PartOfSpeech {
     }
 
     #[inline]
-    #[must_use] 
+    #[must_use]
     pub const fn title(self) -> &'static str {
         match self {
             Self::Adjective => "Adjective",
@@ -30,9 +30,5 @@ impl PartOfSpeech {
 
 pub mod alias {
     #[allow(unused_imports)]
-    pub use super::PartOfSpeech::{
-        Adjective as adj,
-        Noun as n,
-        Verb as v,
-    };
+    pub use super::PartOfSpeech::{Adjective as adj, Noun as n, Verb as v};
 }

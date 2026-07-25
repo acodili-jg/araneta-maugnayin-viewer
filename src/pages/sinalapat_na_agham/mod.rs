@@ -1,4 +1,6 @@
-use crate::{abbr, build_html, page::BuildContext};
+use crate::entry::entries;
+use crate::page::BuildContext;
+use crate::{abbr, build_html};
 
 // TODO
 const SUBCATS: &[super::Category<'_>] = &[
@@ -7,7 +9,7 @@ const SUBCATS: &[super::Category<'_>] = &[
             false,
             "Ngalan ng mga Bahagi ng Lahatang Agham",
             "Names of the Branches of General Science",
-            &[],
+            entries!(),
         ),
         &[],
     ),
@@ -16,20 +18,20 @@ const SUBCATS: &[super::Category<'_>] = &[
             false,
             "Lahatang Katawagan sa Sugnayan",
             "General Terminology in Physics",
-            &[],
+            entries!(),
         ),
         &[
             (
                 false,
                 "Mga Isahin ng Sukat at Sukod",
                 "Units of Measurement and Dimension",
-                &[],
+                entries!(),
             ),
             (
                 false,
                 "Mahahalgang Sugnaying Lagiin",
                 "Important Physical Constants",
-                &[],
+                entries!(),
             ),
         ],
     ),
@@ -38,33 +40,33 @@ const SUBCATS: &[super::Category<'_>] = &[
             false,
             "Lahatang Katawagan sa Kapnayan",
             "General Terminology in Chemistry",
-            &[],
+            entries!(),
         ),
         &[
             (
                 false,
                 "Mga Batas, Simulain at Huna",
                 "Laws, Principles and Theories",
-                &[],
+                entries!(),
             ),
-            (false, "Ang mga Mulangkap", "The Elements", &[]),
+            (false, "Ang mga Mulangkap", "The Elements", entries!()),
             (
                 false,
                 "Mga Larawaning Katawagan at Kangalanan ng mga Kapnaying Sangkap",
                 "Descriptive Terms and Nomenclature of Chemical Substances",
-                &[],
+                entries!(),
             ),
             (
                 false,
                 "Mga Panambal para sa Kapnayaning Kangalanan",
                 "Combining Forms for Chemical Nomenclature",
-                &[],
+                entries!(),
             ),
             (
                 false,
                 "Dagipik at Mulipon ng mga Balangkap",
                 "Ions and Radicals of Compounds",
-                &[],
+                entries!(),
             ),
         ],
     ),
@@ -73,7 +75,7 @@ const SUBCATS: &[super::Category<'_>] = &[
             false,
             "Lahatang Katawagan sa Haynayan",
             "General Terminology in Biology",
-            &[],
+            entries!(),
         ),
         &[],
     ),

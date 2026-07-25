@@ -1,14 +1,8 @@
 use html::text_content::builders::OrderedListBuilder;
 
-use crate::{
-    MGA_LARANGAN,
-    abbr,
-    build_html,
-    format::typo,
-    html,
-    page::{BuildContext, UnpackedBuildContext},
-    quote,
-};
+use crate::format::typo;
+use crate::page::{BuildContext, UnpackedBuildContext};
+use crate::{MGA_LARANGAN, abbr, build_html, html, quote};
 
 #[inline]
 pub fn bungadsabi(mut context: BuildContext<'_>) {
