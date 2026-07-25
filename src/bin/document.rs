@@ -12,9 +12,13 @@ use html::{
 use itertools::{Itertools, izip};
 
 fn main() {
-    let dest = std::env::args().nth(1);
+    let Some(dest) = std::env::args().nth(1) else {
+        eprintln!("Missing required destination folder argument.");
+        return;
+    };
+
     let document = Document {
-        out: &Path::new(&dest.unwrap_or_else(|| "./".into())).join("html/"),
+        out: &Path::new(&dest).join("html/"),
     };
 
     if document.initialize() {
@@ -23,10 +27,7 @@ fn main() {
 
     write_main_pages(&document);
 
-    if matches!([document.out, "./html".as_ref()].map(Path::canonicalize), [Ok(lhs), Ok(rhs)] if lhs != rhs)
-    {
-        document.write_page(include_str!("../../index.html"), "../index");
-    }
+    document.write_page(include_str!("../../index.html"), "../index");
 }
 
 struct Document<'a> {
