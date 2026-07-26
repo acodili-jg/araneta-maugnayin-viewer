@@ -1,6 +1,6 @@
 #[derive(Clone, Copy, Debug, Eq, Ord, PartialEq, PartialOrd)]
 #[non_exhaustive]
-pub enum Qualifier {
+pub enum Qualifier<'a> {
     DoctorOfPhilosophy,
     Education,
     General,
@@ -12,13 +12,14 @@ pub enum Qualifier {
     Ordinary,
     Statistics,
     Technical,
+    Other(&'a str),
 }
 
-impl Qualifier {
+impl<'a> Qualifier<'a> {
     #[inline]
     #[must_use]
-    pub const fn abbr(self) -> &'static str {
-        match self {
+    pub const fn abbr(self) -> Option<&'static str> {
+        Some(match self {
             Self::DoctorOfPhilosophy => "PhD.",
             Self::Education => "Ed.",
             Self::General => "gen.",
@@ -30,12 +31,13 @@ impl Qualifier {
             Self::Ordinary => "ord.",
             Self::Statistics => "Sta.",
             Self::Technical => "tech.",
-        }
+            Self::Other(_) => return None,
+        })
     }
 
     #[inline]
     #[must_use]
-    pub const fn title(self) -> &'static str {
+    pub const fn title(self) -> &'a str {
         match self {
             Self::DoctorOfPhilosophy => "Doctor of Philosophy",
             Self::Education => "Education",
@@ -48,6 +50,7 @@ impl Qualifier {
             Self::Ordinary => "Ordinary",
             Self::Statistics => "Statistics",
             Self::Technical => "Technical",
+            Self::Other(text) => text,
         }
     }
 }

@@ -67,6 +67,13 @@ macro_rules! modifier {
             ])
         )
     };
+    (ety: inh $(< $language:tt $(: $term:tt)?>)+) => {
+        $crate::Modifier::Etymology(
+            $crate::modifier::Etymology::Inherited(&[
+                $($crate::plain_term!($language $(, $term)?), )+
+            ])
+        )
+    };
     (t: $gloss:expr) => {
         $crate::Modifier::Gloss($gloss)
     };
@@ -75,6 +82,9 @@ macro_rules! modifier {
     };
     (q: $qualifier:ident) => {
         $crate::Modifier::Qualifier($crate::modifier::qualifier::alias::$qualifier)
+    };
+    (q: $qualifier:expr) => {
+        $crate::Modifier::Qualifier($crate::modifier::Qualifier::Other($qualifier))
     };
 }
 

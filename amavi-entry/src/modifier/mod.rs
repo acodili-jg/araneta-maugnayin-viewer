@@ -14,7 +14,7 @@ pub enum Modifier<'a> {
     Etymology(Etymology<'a>),
     Gloss(&'a str),
     PartOfSpeech(PartOfSpeech),
-    Qualifier(Qualifier),
+    Qualifier(Qualifier<'a>),
 }
 
 #[derive(Clone, Copy, Debug, Eq, PartialEq)]
@@ -42,7 +42,7 @@ pub enum Right<'a> {
     Etymology(Etymology<'a>),
     Gloss(&'a str),
     PartOfSpeech(PartOfSpeech),
-    Qualifier(Qualifier),
+    Qualifier(Qualifier<'a>),
 }
 
 impl<'a> TryFrom<Modifier<'a>> for Right<'a> {

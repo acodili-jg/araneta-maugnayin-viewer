@@ -7,4 +7,5 @@ pub enum Etymology<'a> {
     Blend(&'a [(Option<Language>, Option<&'a str>)]),
     Borrow(&'a [(Option<Language>, Option<&'a str>)]),
     From(&'a [(Option<Language>, Option<&'a str>)]),
+    Inherited(&'a [(Option<Language>, Option<&'a str>)]),
 }

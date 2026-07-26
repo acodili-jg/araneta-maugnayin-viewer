@@ -156,7 +156,9 @@ fn append_fragment(li: &mut ListItemBuilder, fragment: &'static Fragment<'static
                     }
                     builder.build().into()
                 }
-                modifier::Etymology::Borrow(items) | modifier::Etymology::From(items) => {
+                modifier::Etymology::Borrow(items)
+                | modifier::Etymology::From(items)
+                | modifier::Etymology::Inherited(items) => {
                     let mut items = items.iter().copied().filter_map(ety_text);
                     let mut builder = Span::builder();
                     if let Some(first) = items.next() {
@@ -177,12 +179,15 @@ fn append_fragment(li: &mut ListItemBuilder, fragment: &'static Fragment<'static
                 abbr.title(part_of_speech.title());
                 ListItemChild::from(abbr.build())
             }
-            modifier::Right::Qualifier(qualifier) => {
-                let mut abbr = Abbreviation::builder();
-                abbr.text(qualifier.abbr());
-                abbr.title(qualifier.title());
-                ListItemChild::from(abbr.build())
-            }
+            modifier::Right::Qualifier(qualifier) => qualifier.abbr().map_or_else(
+                || ListItemChild::from(qualifier.title()),
+                |abbreviation| {
+                    let mut abbr = Abbreviation::builder();
+                    abbr.text(abbreviation);
+                    abbr.title(qualifier.title());
+                    ListItemChild::from(abbr.build())
+                },
+            ),
             _ => unimplemented!(),
         });
 

@@ -8,12 +8,12 @@ definitions!(
         ["additive inverse"] => ["dagdaging kabaligtaran"],
         ["algebra of sets"] => ["panandaan ng tangkas"],
         ["and so on…"] => ["at pagayon…"],
-        ["any set"] => ["anumang tanglas"],
+        ["any set"] => ["anumang tangkas"],
         ["A prime"<alt:"A'">] => ["A kudlit"],
         ["a set"] => ["isang tangkas"],
         ["associative"] => ["ugnayin"],
         ["associative law"] => ["ugnaying batas"],
-        ["associativity"] => ["kaugnayin"],
+        ["associativity"] => ["pagkaugnayin"],
         // 361-370
         ["belongs to"] => ["ay nauukol sa"],
         ["can be placed into one-to-one correspondence"] => ["maisusungkad"<alt:"maisasatugon nang isa-sa-isa">],
@@ -48,7 +48,7 @@ definitions!(
         ["equivalent set"] => ["kahalgang tangkas"],
         ["equivalent sets"] => ["mga kahalgang tangkas", "magkakahalgang tangkas"],
         ["false statement"] => ["di-tunay na saad"],
-        ["finite set"] => ["hangganing tanglas"],
+        ["finite set"] => ["hangganing tangkas"],
         ["finite number of elements"] => ["hangganing bilang ng mga mulhagi"],
         ["given a set A"] => ["ibinigay ang tangkas A"],
         // 391-400
@@ -84,7 +84,7 @@ definitions!(
     [
         // 416-420
         ["number line"] => ["guhitbilang"],
-        ["one-to-one correspondence"] => [MatTag:"sungkad"],
+        ["one-to-one correspondence"] => ["sungkad"<ety:inh<MatTag:- >>],
         ["open phrase"] => ["bukas na parirala"],
         ["open sentence"] => ["bukas na pangungusap"],
         ["operation"] => ["sakilos"],
@@ -92,7 +92,7 @@ definitions!(
         ["operation on sets"] => ["mga sakilos sa mga tangkas"],
         ["operator"] => ["pakilos"],
         ["ordered pair"] => ["kapid na ayos"],
-        ["pair"] => [Bis:"kapid"],
+        ["pair"] => ["kapid"<ety:bor<Bis:- >>],
         ["permissible values"] => ["maaaring halga"],
         ["proper subset"] => ["angkop na kubtangkas"],
         ["property"] => ["kaangkinan"],

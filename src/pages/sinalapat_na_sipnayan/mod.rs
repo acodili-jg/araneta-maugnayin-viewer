@@ -1,10 +1,13 @@
-use crate::entry::entries;
 use crate::page::BuildContext;
 use crate::{abbr, build_html};
 
 mod bilnuran;
 mod palatangkasan;
+mod palaulatan;
+mod panandaan;
 mod sukgisan;
+mod tatsihaan;
+mod tayahan;
 
 const SUBCATS: &[super::Category<'_>] = &[
     (
@@ -19,10 +22,16 @@ const SUBCATS: &[super::Category<'_>] = &[
     ((true, "Bilnuran", "Arithmetic", bilnuran::ENTRIES), &[]),
     ((true, "Sukgisan", "Geometry", sukgisan::ENTRIES), &[]),
     // TODO
-    ((false, "Panandaan", "Algebra", entries!()), &[]),
-    ((false, "Tasihaan", "Trigonometry", entries!()), &[]),
-    ((false, "Tayahan", "Calculus", entries!()), &[]),
-    ((false, "Palaulatan", "Statistics", entries!()), &[]),
+    ((false, "Panandaan", "Algebra", panandaan::ENTRIES), &[]),
+    (
+        (false, "Tatsihaan", "Trigonometry", tatsihaan::ENTRIES),
+        &[],
+    ),
+    ((false, "Tayahan", "Calculus", tayahan::ENTRIES), &[]),
+    (
+        (false, "Palaulatan", "Statistics", palaulatan::ENTRIES),
+        &[],
+    ),
 ];
 
 #[inline]
